@@ -13,9 +13,15 @@ import WatchConnectivity
 
 class InterfaceController: WKInterfaceController, WCSessionDelegate {
     var wcSession: WCSession! = nil
+    let health: HKHealthStore = HKHealthStore()
+    let hearRateUnit: HKUnit = HKUnit(from: "count/min")
+    let heartRateType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+    var heartRateQuery: HKQuery?
+    var count = 0
     
     @IBOutlet weak var heartRateLabel: WKInterfaceLabel!
     @IBOutlet weak var labeltext: WKInterfaceLabel!
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
@@ -48,20 +54,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     override func didAppear() {
         super.didAppear()
-        //self.requestAuthorization()
-        
-        
     }
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
     
-    let health: HKHealthStore = HKHealthStore()
-    let hearRateUnit: HKUnit = HKUnit(from: "count/min")
-    let heartRateType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-    var heartRateQuery: HKQuery?
-    var count = 0
+    
     @IBAction func genButton() {
         /*if self.wcSession.isReachable {
             let message = ["btnMM": count]

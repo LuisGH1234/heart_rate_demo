@@ -13,8 +13,25 @@ import HealthKit
 class ViewController: UIViewController, WCSessionDelegate {
     
     var wcSession: WCSession! = nil
+    let heartRateType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+    let health: HKHealthStore = HKHealthStore()
+    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var watchLabel: UILabel!
+    @IBOutlet weak var btnSend: UIButton!
+    @IBOutlet weak var bpmLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        textField.text = "example"
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
+        
+        //self.subscribeToHeartBeatChages()
+        self.requestAuthorization()
+    }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
@@ -57,7 +74,6 @@ class ViewController: UIViewController, WCSessionDelegate {
             }
         }
     }
-
     
     func sessionDidBecomeInactive(_ session: WCSession) {
         print("sessionDidBecomeInactive on iPhone")
@@ -67,9 +83,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         print("sessionDidDeactivate on iPhone")
     }
     
-    @IBOutlet weak var btnSend: UIButton!
     
-    @IBOutlet weak var bpmLabel: UILabel!
     @IBAction func sendtext(_ sender: UIButton) {
         let txt = textField.text!
         let message = ["name": txt]
@@ -80,22 +94,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             })
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        textField.text = "example"
-        wcSession = WCSession.default
-        wcSession.delegate = self
-        wcSession.activate()
-        
-        //self.subscribeToHeartBeatChages()
-        self.requestAuthorization()
-    }
-
-    // ------
     
-    let heartRateType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-    let health: HKHealthStore = HKHealthStore()
     func requestAuthorization() {
         let readingTypes: Set = Set([heartRateType])
         let writingTypes: Set = Set([heartRateType])
@@ -111,7 +110,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         })
     }
     
-    var heartRateQuery: HKObserverQuery!
+    /*var heartRateQuery: HKObserverQuery!
     var healStore: HKHealthStore = HKHealthStore()
     public func subscribeToHeartBeatChages() {
         guard let sampleType: HKSampleType = HKObjectType.quantityType(forIdentifier: .heartRate) else {
@@ -140,10 +139,6 @@ class ViewController: UIViewController, WCSessionDelegate {
                 }
             })
         }
-        
-        /*if let query = self.heartRateQuery {
-            self.healStore.execute(query)
-        }*/
     }
     
     public func fetchLastestHeartRateSample(completion: @escaping (_ sample: HKQuantitySample?) -> Void) {
@@ -167,6 +162,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             completion(results?[0] as? HKQuantitySample)
         }
         self.healStore.execute(query)
-    }
+    }*/
 }
 
+// extension ViewController: WCSessionDelegate {}
