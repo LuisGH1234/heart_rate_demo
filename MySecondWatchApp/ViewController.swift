@@ -31,8 +31,10 @@ class ViewController: UIViewController, WCSessionDelegate {
             }
         }
     }
+    
+    // heart rate
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print("recieved message 1")
+        // print("recieved message 1")
         DispatchQueue.main.async {
             if let mss = message["btnMM"] as? Int {
                 self.watchLabel.text = "\(mss)"
@@ -43,8 +45,9 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
     }
     
+    // counter
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        print("recieved message 2")
+        // print("recieved message 2")
         DispatchQueue.main.async {
             if let mss = applicationContext["btnMM"] as? Int {
                 self.watchLabel.text = "\(mss)"
@@ -71,9 +74,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         let txt = textField.text!
         let message = ["name": txt]
         
-        wcSession.sendMessage(message, replyHandler: nil, errorHandler: { err in
-            print(err.localizedDescription)
-        })
+        if wcSession.isReachable {
+            wcSession.sendMessage(message, replyHandler: nil, errorHandler: { err in
+                print(err.localizedDescription)
+            })
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

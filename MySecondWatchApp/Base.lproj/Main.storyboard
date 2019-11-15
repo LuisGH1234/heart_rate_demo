@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,46 +12,76 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MySecondWatchApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coloca un texto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwg-M6-q21">
-                                <rect key="frame" x="147" y="93" width="120" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeartRate Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwg-M6-q21">
+                                <rect key="frame" x="80" y="30" width="254" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XW2-zy-Okt">
-                                <rect key="frame" x="184" y="262" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XW2-zy-Okt">
+                                <rect key="frame" x="150" y="403.66666666666669" width="114" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xoG-us-nzq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="ENVIAR">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
+                                </state>
                                 <connections>
                                     <action selector="sendtext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bA3-1C-ot6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vpy-d5-wrr">
-                                <rect key="frame" x="20" y="179" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vpy-d5-wrr">
+                                <rect key="frame" x="20" y="359.66666666666669" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bpm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jG-hy-316">
-                                <rect key="frame" x="190" y="300" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jG-hy-316">
+                                <rect key="frame" x="80" y="296" width="254" height="33.666666666666686"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="28"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LabelWatch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUm-a6-AP2">
-                                <rect key="frame" x="162" y="329" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9ly-VL-mcd">
+                                <rect key="frame" x="90" y="98" width="234" height="147"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="cjc-0M-uoI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="counter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUm-a6-AP2">
+                                <rect key="frame" x="150" y="256" width="114" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9jG-hy-316" firstAttribute="top" secondItem="9ly-VL-mcd" secondAttribute="bottom" constant="50" id="2FU-em-JbD"/>
+                            <constraint firstItem="9ly-VL-mcd" firstAttribute="top" secondItem="fwg-M6-q21" secondAttribute="bottom" constant="30" id="2Sg-aJ-TDz"/>
+                            <constraint firstItem="Vpy-d5-wrr" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="20" id="49E-8t-9cA"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="9jG-hy-316" secondAttribute="trailing" constant="80" id="4IE-X3-vJU"/>
+                            <constraint firstItem="fwg-M6-q21" firstAttribute="top" secondItem="Uee-0j-aNJ" secondAttribute="top" constant="30" id="Id1-Zj-3GM"/>
+                            <constraint firstItem="9ly-VL-mcd" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="90" id="JN9-Cs-BMN"/>
+                            <constraint firstItem="nUm-a6-AP2" firstAttribute="top" secondItem="9ly-VL-mcd" secondAttribute="bottom" constant="10" id="LhM-RJ-ZSH"/>
+                            <constraint firstItem="fwg-M6-q21" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="80" id="O1O-46-wGP"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="Vpy-d5-wrr" secondAttribute="trailing" constant="20" id="ZY7-jO-Zrm"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="9ly-VL-mcd" secondAttribute="trailing" constant="90" id="Zj6-c9-kxr"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="XW2-zy-Okt" secondAttribute="trailing" constant="150" id="dUh-EH-Gns"/>
+                            <constraint firstItem="XW2-zy-Okt" firstAttribute="top" secondItem="Vpy-d5-wrr" secondAttribute="bottom" constant="10" id="dps-iM-db0"/>
+                            <constraint firstItem="XW2-zy-Okt" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="150" id="e8t-Ga-ubF"/>
+                            <constraint firstItem="Vpy-d5-wrr" firstAttribute="top" secondItem="9jG-hy-316" secondAttribute="bottom" constant="30" id="na6-OK-jyO"/>
+                            <constraint firstItem="nUm-a6-AP2" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="150" id="pPN-xo-7gK"/>
+                            <constraint firstItem="9jG-hy-316" firstAttribute="leading" secondItem="Uee-0j-aNJ" secondAttribute="leading" constant="80" id="rAI-G4-cB1"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="nUm-a6-AP2" secondAttribute="trailing" constant="150" id="tnj-ag-ZPL"/>
+                            <constraint firstItem="Uee-0j-aNJ" firstAttribute="trailing" secondItem="fwg-M6-q21" secondAttribute="trailing" constant="80" id="uEx-QH-Mgi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Uee-0j-aNJ"/>
                     </view>
                     <connections>
@@ -66,4 +96,7 @@
             <point key="canvasLocation" x="139" y="130"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+    </resources>
 </document>

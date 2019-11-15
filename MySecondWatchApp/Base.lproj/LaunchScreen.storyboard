@@ -14,7 +14,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartBranding" translatesAutoresizingMaskIntoConstraints="NO" id="uyx-TM-VRm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uyx-TM-VRm" secondAttribute="trailing" id="G7O-8h-OsE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uyx-TM-VRm" secondAttribute="bottom" id="oxS-mO-9Xf"/>
+                            <constraint firstItem="uyx-TM-VRm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xLd-j9-XC4"/>
+                            <constraint firstItem="uyx-TM-VRm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z4y-nr-J0g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -23,4 +34,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heartBranding" width="4973" height="3693"/>
+    </resources>
 </document>

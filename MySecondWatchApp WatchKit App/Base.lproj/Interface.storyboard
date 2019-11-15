@@ -13,9 +13,13 @@
                     <items>
                         <label width="131" height="20" alignment="center" text="---" textAlignment="center" id="TU0-jl-lNX">
                             <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
-                        <label width="136" alignment="center" text="bpm" textAlignment="center" id="r9w-yR-yFw"/>
-                        <button width="1" alignment="left" title="Button" id="4FT-Ow-lnd">
+                        <label width="136" alignment="center" text="bpm" textAlignment="center" id="r9w-yR-yFw">
+                            <color key="textColor" red="0.89803921568627454" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="italicSystem" pointSize="20"/>
+                        </label>
+                        <button width="1" alignment="left" title="Counter" id="4FT-Ow-lnd">
                             <connections>
                                 <action selector="genButton" destination="AgC-eL-Hgc" id="KZZ-q2-1ol"/>
                             </connections>
